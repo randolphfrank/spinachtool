@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farm2Fork Tool</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="static/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/main.css">
+
+</head>
+
+<body>
+
+    <h1>Farm2Fork Spinach Processing Tool    <img src="static/fork.jpg" width="50px" height="auto" alt="logo"/></h1>
+
+    <img src="{{ image_A }}" width="300px" height="auto" align="middle" alt="Image A" id="imgA">
+    <img src="{{ image_outA }}" width="300px" height="auto" align="middle" alt="Image A Process" id="imgOutA" style="border:5px solid green">
+
+    <img src="{{ image_C }}" width="300px" height="auto" align="middle" alt="Image C" id="imgC">
+    <img src="{{ image_outC }}" width="300px" height="auto" align="middle" alt="Image C Process" id="imgOutC" style="border:5px solid orange">
+
+    <img src="{{ image_B }}" style="transform:rotate(90deg);" width="400px" height="auto" align="middle" alt="Image B" id="imgB">
+    <img src="{{ image_outB }}" style="transform:rotate(90deg); border:5px solid red" width="400px" height="auto" align="middle" alt="Image B Process" id="imgOutB">
+
+    <span class="stretch"></span>
+
+    <div id="indicator" style="background-color:lightblue">
+        <h3>Quality score</h3>
+        <p id="p1">3.2% - Great!</p>
+        <p id="p2">18.7% - Okay</p>
+        <p id="p3">26.1% - Poor</p>
+    </div>
+
+
+    <div style="width: 100%;">
+        <div style="float:left; width: 50%">
+            <h1>Generate Report</h1>
+            <form>
+                <input type="button" value="Download Report" onclick="location.href='/getPlotCSV';">
+            </form>
+        </div>
+
+        <div style="float:right; width: 30%">
+            <h1>Recall Notification</h1>
+            <form>
+                <input type="button" style="background-color:red" value="Recall Event" onclick="location.href='/send_recall_notification';">
+            </form>
+        </div>
+
+    </div>
+
+    <div style="clear:both"></div>
+
+
+
+</body>
+
+</html>
